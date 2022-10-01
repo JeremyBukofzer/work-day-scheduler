@@ -1,19 +1,20 @@
-var hour = document.getElementById('hour-num')
-var textArea = document.querySelector('textarea')
-
-var currentTime = moment("hh");
 
 
 var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do"))
 
-var blockDisplay = function() {
+function blockDisplay() {
+    var currentTime = moment().hour();
+
+    $(".time-block")
+
     if(hour > currentTime) {
-        textArea.style = '.future';
+        textArea.addClass = '.future';
     } else if(hour < currentTime) {
-        textArea.style = '.past';
+        textArea.addClass = '.past';
 }
 }
+
 //if hour is < current time
     //style= past
 //else if hour is > current time
