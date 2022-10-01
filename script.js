@@ -4,19 +4,22 @@ var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do"))
 
 function blockDisplay() {
-    var currentTime = moment().hour();
+    var currentTime = moment().format('h A');
+    
+    $('.time-block').each(function() {
+        
+    var blockHour = $('.hour').text()
 
-    $(".time-block")
+            if (blockHour > currentTime) {
+                $('.time-block').addClass = '.future';
+            } else if (blockHour < currentTime) {
+                $('.time-block').addClass = '.past';
+            } else {
+                $('.time-block').addClass = '.present';
+            }
+            console.log(blockHour)
+            console.log(currentTime)
+        })
+    }
 
-    if(hour > currentTime) {
-        textArea.addClass = '.future';
-    } else if(hour < currentTime) {
-        textArea.addClass = '.past';
-}
-}
-
-//if hour is < current time
-    //style= past
-//else if hour is > current time
-    //style = future
-//else style = present
+blockDisplay()
