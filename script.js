@@ -6,6 +6,8 @@ $("#currentDay").text(today.format("dddd, MMMM Do"))
 // Selects current time using moment.js
 var currentTime = moment().hour();
 
+var taskBox = $("row").text();
+
 
 function blockDisplay() {
     
@@ -24,6 +26,15 @@ function blockDisplay() {
         })
     }
 
-    
+$(document).ready(function () {
+    $('textarea').html(localStorage.getItem('taskBox'))
+
+    $('button').on("click", function () {
+        localStorage.setItem('taskBox', $('textarea').val())
+
+    })
+})
+
+
 
 blockDisplay()
