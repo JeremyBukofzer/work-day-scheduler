@@ -6,15 +6,16 @@ $("#currentDay").text(today.format("dddd, MMMM Do"))
 // Selects current time using moment.js
 var currentTime = moment().hour();
 
+//starts the documents functions
 $(document).ready(function () {
-
+    //save button
     $('.saveBtn').on('click', function() {
         var taskBox = $(this).siblings(".description").val()
         var time = $(this).parent().attr("id")
 
         localStorage.setItem(time, taskBox)
     })
-
+    // function to decide what color the time block is.
     function blockDisplay() {
     
         $('.time-block').each(function() {
@@ -29,7 +30,7 @@ $(document).ready(function () {
                 }
             })
         }
-
+        //gets item from local storage when filled out and saved.
         $('#hour9 .description').val(localStorage.getItem('hour9'))
         $('#hour10 .description').val(localStorage.getItem('hour10'))
         $('#hour11 .description').val(localStorage.getItem('hour11'))
