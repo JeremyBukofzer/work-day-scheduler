@@ -9,9 +9,10 @@ var currentTime = moment().hour();
 $(document).ready(function () {
 
     $('.saveBtn').on('click', function() {
-        var taskBox = $('.description').text()
+        var taskBox = $(this).siblings(".description").val()
+        var time = $(this).parent().attr("id")
 
-        localStorage.setItem(taskBox)
+        localStorage.setItem(time, taskBox)
     })
 
     function blockDisplay() {
