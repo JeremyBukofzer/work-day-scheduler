@@ -21,11 +21,11 @@ $(document).ready(function () {
             var timeBlock = parseInt($(this).attr('id').split('hour')[1])
     
                 if (timeBlock > currentTime) {
-                    $(this).addClass('past').removeClass('future present')
+                    $(this).addClass('future').removeClass('past present')
                 }  else if (timeBlock === currentTime) {
                     $(this).addClass('present').removeClass('future past')
                 } else {
-                    $(this).addClass('future').removeClass('past present')
+                    $(this).addClass('past').removeClass('future present')
                 }
             })
         }
